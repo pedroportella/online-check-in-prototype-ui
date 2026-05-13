@@ -1,0 +1,101 @@
+.va-kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--va-space-2);
+}
+
+.va-kpi-card__label {
+  color: var(--va-colour-muted);
+  font-size: 0.875rem;
+}
+
+.va-kpi-card__value {
+  font-size: 1.6rem;
+}
+
+.va-kpi-card__delta {
+  font-size: 0.875rem;
+}
+
+.va-kpi-card--good .va-kpi-card__delta {
+  color: var(--va-status-free-flow);
+}
+
+.va-kpi-card--warning .va-kpi-card__delta {
+  color: var(--va-status-congested);
+}
+
+.va-field {
+  display: grid;
+  gap: var(--va-space-2);
+}
+
+.va-field__label {
+  font-weight: 700;
+}
+
+.va-select {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--va-colour-border);
+  border-radius: var(--va-radius-md);
+  padding: var(--va-space-3);
+  font: inherit;
+}
+
+.va-layer-list {
+  display: grid;
+  gap: var(--va-space-2);
+}
+
+.va-check {
+  display: flex;
+  align-items: center;
+  gap: var(--va-space-2);
+}
+
+.va-segmented-control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--va-space-2);
+}
+
+.va-segmented-control button {
+  border: 1px solid var(--va-colour-border);
+  border-radius: var(--va-radius-md);
+  background: var(--va-colour-surface);
+  padding: var(--va-space-2);
+  cursor: pointer;
+}
+
+.va-segmented-control button.is-active {
+  background: var(--va-colour-primary);
+  color: #fff;
+}
+
+.va-detail-list {
+  display: grid;
+  gap: var(--va-space-2);
+}
+
+.va-detail-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--va-space-4);
+  border-bottom: 1px solid var(--va-colour-border);
+  padding-bottom: var(--va-space-2);
+}
+
+.va-detail-list dt {
+  font-weight: 700;
+}
+
+.va-detail-list dd {
+  margin: 0;
+  text-align: right;
+}
+
+.va-control-stack {
+  display: grid;
+  gap: 1.1rem;
+}

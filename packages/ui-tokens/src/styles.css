@@ -1,0 +1,37 @@
+:root {
+  --va-colour-background: #f6f8fb;
+  --va-colour-surface: #ffffff;
+  --va-colour-surface-alt: #eef4fb;
+  --va-colour-border: #cdd7e3;
+  --va-colour-text: #162337;
+  --va-colour-muted: #5c6b7f;
+  --va-colour-primary: #005eb8;
+  --va-colour-primary-dark: #003f7d;
+  --va-colour-focus: #ffbf47;
+  --va-status-free-flow: #2e7d32;
+  --va-status-moderate: #f9a825;
+  --va-status-congested: #ef6c00;
+  --va-status-severe: #c62828;
+  --va-status-freight: #6a1b9a;
+  --va-status-public-transport: #0277bd;
+  --va-space-1: 0.25rem;
+  --va-space-2: 0.5rem;
+  --va-space-3: 0.75rem;
+  --va-space-4: 1rem;
+  --va-space-6: 1.5rem;
+  --va-radius-md: 0.5rem;
+  --va-radius-lg: 0.75rem;
+  --va-shadow-card: 0 0.75rem 2rem rgba(22, 35, 55, 0.08);
+  --QLD-color-light__background: #ffffff;
+  --QLD-color-light__background--shade: #f6f8fb;
+  --QLD-color-light__text: #162337;
+  --QLD-color-light__heading: #003f7d;
+  --QLD-color-light__link: #005eb8;
+  --QLD-color-light__border: #cdd7e3;
+  --QLD-color-light__focus: #ffbf47;
+  --QLD-color-light__action--primary: #005eb8;
+  --QLD-color-light__action--primary-hover: #003f7d;
+  --QLD-color-dark__background: #003f7d;
+  --QLD-color-dark__background--alt: #002f5f;
+  --QLD-color-dark__text: #ffffff;
+}

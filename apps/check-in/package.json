@@ -1,0 +1,24 @@
+{
+  "name": "@va/check-in",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 7001",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 7002",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "latest",
+    "@va/ui-library": "workspace:*",
+    "@va/ui-tokens": "workspace:*",
+    "@va/utils": "workspace:*",
+    "msw": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}

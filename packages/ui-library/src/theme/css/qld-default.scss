@@ -1,0 +1,18 @@
+@charset "UTF-8";
+// Import the VDS Design Tokens Level 1 (Primitive) and Level 2 (VDS).
+@import "../../../../ui-tokens/src/scss/styles/primitive";
+@import "../../../../ui-tokens/src/scss/styles/vds";
+// Level 3 (Theme-Palette) theme and palettes are combined in one file
+// Please don't change the following line. It is used by the build process to inject the correct path to the vds-tokens package
+@import "../../../../ui-tokens/src/scss/styles/qld-maroon-palette.scss";
+// Mapping of the VDS Design Tokens to general CSS variables
+@import "imports/variables-root.scss";
+// Mapping of tokens to CSS variables for the light and dark themes
+@media (prefers-color-scheme: light) {
+  @import "imports/variables-light.scss";
+}
+@media (prefers-color-scheme: dark) {
+  @import "imports/variables-dark.scss";
+}
+// Import the default variables
+@import "imports/defaults.scss";
