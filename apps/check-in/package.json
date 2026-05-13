@@ -14,6 +14,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "latest",
     "@va/ui-library": "workspace:*",
+    "@va/services-check-in": "workspace:*",
     "@va/ui-tokens": "workspace:*",
     "@va/utils": "workspace:*",
     "msw": "latest",

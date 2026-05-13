@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({
   className = "",
   contentClassName,
 }) => {
-  const rootClasses = ["qld__djag__layout", className].filter(Boolean).join(" ");
+  const rootClasses = ["qld__grid", "qld__djag__layout", className].filter(Boolean).join(" ");
   const defaultContentClass = `col-xs-12 ${
     hideSidebar ? "col-lg-12 col-xl-12" : "col-lg-9 col-xl-9"
   } dcir__content`;

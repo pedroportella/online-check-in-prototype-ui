@@ -62,6 +62,9 @@ importers:
       '@fortawesome/free-solid-svg-icons':
         specifier: latest
         version: 7.2.0
+      '@va/services-check-in':
+        specifier: workspace:*
+        version: link:../../packages/services-check-in
       '@va/ui-library':
         specifier: workspace:*
         version: link:../../packages/ui-library
@@ -80,6 +83,8 @@ importers:
       react-dom:
         specifier: latest
         version: 19.2.6(react@19.2.6)
+
+  packages/services-check-in: {}
 
   packages/ui-assets: {}
 

@@ -31,6 +31,9 @@
       ],
       "@va/utils": [
         "./packages/utils/src/index.ts"
+      ],
+      "@va/services-check-in": [
+        "./packages/services-check-in/src/index.ts"
       ]
     }
   }
