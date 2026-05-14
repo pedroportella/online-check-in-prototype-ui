@@ -62,4 +62,19 @@ describe("Card", () => {
 
     expect(document.querySelector(".qld__card__arrow")).toBeInTheDocument();
   });
+
+  it("applies the selected QLD card colour variant class", () => {
+    const { container } = render(<Card colorVariant="dark-alt" title="Dark Alt Card" />);
+
+    expect(container.firstElementChild).toHaveClass("qld__card--dark-alt");
+  });
+
+  it("does not apply a colour modifier class for the default card colour", () => {
+    const { container } = render(<Card colorVariant="default" title="Default Card" />);
+
+    expect(container.firstElementChild).not.toHaveClass("qld__card--light");
+    expect(container.firstElementChild).not.toHaveClass("qld__card--alt");
+    expect(container.firstElementChild).not.toHaveClass("qld__card--dark");
+    expect(container.firstElementChild).not.toHaveClass("qld__card--dark-alt");
+  });
 });

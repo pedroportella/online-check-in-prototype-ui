@@ -132,11 +132,11 @@ export function App() {
                 <div className="row qld__row-gap-component qld__card-list--matchheight" aria-label="Delivery KPIs">
                   {dashboard.kpiCards.map((kpi) => (
                     <div className="col-xs-12 col-sm-6 col-xl-3" key={kpi.label}>
-                      <Card variant="no-action" title={kpi.label} description={kpi.value} />
+                      <Card variant="no-action" colorVariant="dark" title={kpi.label} description={kpi.value} />
                     </div>
                   ))}
                 </div>
-                <div className="row qld__row-gap-component">
+                <div className="row qld__row-gap-component dcir__page-content" aria-live="polite">
                   <div className="col-xs-12 col-xl-4 qld__display-flex qld__flex-column qld__row-gap-component">
                     <Accordion defaultOpenAll showToggleAll={false} items={[{ id:'delivery-controls', title: dashboard.controlsTitle, body:(
                       <div className="qld__display-flex qld__flex-column qld__row-gap-component">
@@ -145,11 +145,12 @@ export function App() {
                         <CheckboxGroup id="journey-stages" legend={dashboard.journeyStagesLegend} name="journey-stages" options={getStageKeys(dashboard).map((stage) => ({ id: stage, label: dashboard.stageLabels[stage], value: stage, checked: uiState.activeStages.includes(stage) }))} onChange={(value, checked)=>setUiState((current)=>current ? { ...current, activeStages: checked ? [...new Set([...current.activeStages, value as CheckInStage])] : current.activeStages.filter((item)=>item!==value) } : current)} />
                       </div>
                     )}]} />
-                    <Card variant="no-action" title={dashboard.leadNoteTitle} description={dashboard.leadNote} />
+                    <Card variant="no-action" colorVariant="dark-alt" title={dashboard.leadNoteTitle} description={dashboard.leadNote} />
                     {dashboard.telemetry.engines.map((engine) => (
                       <Card
                         key={engine.engineId}
                         variant="no-action"
+                        colorVariant="dark-alt"
                         title={engine.engineId}
                         description={`Services subscription. ${engine.flightCount} flights. Sequence ${engine.sequence}.`}
                       />
@@ -160,11 +161,11 @@ export function App() {
                       <div className="row qld__row-gap-component qld__card-list--matchheight">
                         {uiState.activeStages.map((stage)=>(
                           <div className="col-xs-12 col-md-6 col-xl-4" key={stage}>
-                            <Card variant="no-action" title={dashboard.stageLabels[stage]} description={dashboard.stageSummaries[stage]} />
+                            <Card variant="no-action" colorVariant="alt" title={dashboard.stageLabels[stage]} description={dashboard.stageSummaries[stage]} />
                           </div>
                         ))}
                       </div>
-                      <div className="row qld__row-gap-component qld__card-list--matchheight">
+                      <div className="row qld__row-gap-component qld__card-list--matchheight dcir__page-content" aria-live="polite">
                         {dashboard.flights.map((flight)=>(
                           <div className="col-xs-12" key={flight.id}>
                             <Card variant="no-action" title={getFlightTitle(flight)} description={getFlightDescription(flight)} />

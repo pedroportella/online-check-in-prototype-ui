@@ -14,7 +14,7 @@ export type CardLink = {
   ariaLabel?: string;
 };
 
-type CardVariant =
+export type CardVariant =
   | "multi-action"
   | "single-action"
   | "single-action-with-footer"
@@ -24,8 +24,11 @@ type CardVariant =
   | "single-action-arrow"
   | "no-action";
 
+export type CardColorVariant = "default" | "light" | "alt" | "dark" | "dark-alt";
+
 type CardProps = {
   variant?: CardVariant;
+  colorVariant?: CardColorVariant;
   title: string;
   description?: string;
   href?: string;
@@ -63,6 +66,7 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({
   variant = "no-action",
+  colorVariant = "default",
   title,
   description,
   href,
@@ -92,6 +96,10 @@ export const Card: React.FC<CardProps> = ({
     "qld__card--icon": ["single-action-icon", "single-action-icon-left"].includes(variant),
     "qld__card--icon-left": variant === "single-action-icon-left",
     "qld__card--arrow": variant === "single-action-arrow",
+    "qld__card--light": colorVariant === "light",
+    "qld__card--alt": colorVariant === "alt",
+    "qld__card--dark": colorVariant === "dark",
+    "qld__card--dark-alt": colorVariant === "dark-alt",
   });
 
   // If the card itself has a role (e.g. "button"), use ariaLabel on the outer wrapper.

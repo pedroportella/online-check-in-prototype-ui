@@ -1,3 +1,62 @@
+const footerLinkGroups = [
+  {
+    heading: "Support",
+    links: [
+      { label: "Help centre", href: "https://www.virginaustralia.com/au/en/help/" },
+      {
+        label: "Travel Credits information",
+        href: "https://www.virginaustralia.com/au/en/book/manage-booking/redeem-travel-credits/",
+      },
+      { label: "Velocity member support", href: "https://www.velocityfrequentflyer.com/help" },
+      { label: "Legal policies", href: "https://www.virginaustralia.com/au/en/about-us/policies/legal/" },
+      { label: "Contact us", href: "https://www.virginaustralia.com/au/en/help/contact-us/" },
+    ],
+  },
+  {
+    heading: "Get to know us",
+    links: [
+      { label: "Company", href: "https://www.virginaustralia.com/au/en/about-us/" },
+      { label: "Careers", href: "https://www.virginaustralia.com/au/en/about-us/careers/" },
+      { label: "Investor Centre", href: "https://www.virginaustralia.com/au/en/about-us/investor-relations/" },
+      { label: "Sustainability", href: "https://www.virginaustralia.com/au/en/about-us/sustainability/" },
+      { label: "Media", href: "https://www.virginaustralia.com/au/en/newsroom/" },
+    ],
+  },
+  {
+    heading: "Other services",
+    links: [
+      { label: "Cargo services", href: "https://www.virginaustralia.com/au/en/travel-info/flying-with-us/cargo/" },
+      { label: "Travel agents", href: "https://www.virginaustralia.com/au/en/travel-info/flying-with-us/agency-hub/" },
+      { label: "Group bookings", href: "https://www.virginaustralia.com/au/en/travel-info/specific-travel/group-travel/" },
+      { label: "Car hire and hotel deals", href: "https://www.virginaustralia.com/au/en/book/partner-offers/" },
+      {
+        label: "Travel insurance",
+        href: "https://www.virginaustralia.com/au/en/book/partner-offers/travel-insurance-offers/",
+      },
+    ],
+  },
+  {
+    heading: "Download our app",
+    links: [
+      { label: "Download on the App Store", href: "https://apps.apple.com/au/app/virgin-australia/id356630302" },
+      {
+        label: "Get it on Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.virginaustralia.vaapp",
+      },
+    ],
+  },
+];
+
+const legalLinks = [
+  {
+    label: "Conditions of carriage",
+    href: "https://www.virginaustralia.com/au/en/about-us/policies/legal/conditions-of-carriage/",
+  },
+  { label: "Privacy", href: "https://www.virginaustralia.com/au/en/about-us/policies/privacy/" },
+  { label: "Terms of use", href: "https://www.virginaustralia.com/au/en/about-us/policies/legal/terms-of-use/" },
+  { label: "Cookies policy", href: "https://www.virginaustralia.com/au/en/about-us/policies/privacy/cookies-policy/" },
+];
+
 const Footer = () => (
   <footer className="qld__footer qld__footer--dark-alt" role="contentinfo">
     <div className="container-fluid">
@@ -12,77 +71,35 @@ const Footer = () => (
 
     <div className="container-fluid">
       <div className="row">
-        <div className="col-xs-12 col-lg-3 qld__footer__column">
-          <div className="container-fluid">
-            <div className="row qld__footer-contact">
-              <div className="col-xs-12 col-sm-8 col-lg-12">
-                <h4 className="qld__footer__heading">Contact Us</h4>
-                <p className="qld__footer__cta-content">For general enquiries, feedback, complaints and compliments:</p>
-                <p className="qld__footer__cta-content">
-                  <i className="qld__footer__cta__icon fa-light fa-phone" aria-hidden="true"></i>
-                  13 QGOV (<a href="tel:137468">11 11 11</a>)<br />
-                </p>
-              </div>
-              <div className="col-xs-12 col-sm-4 col-lg-12">
-                <a href="http://qhscb.squiz.cloud/contact-us" className="qld__btn qld__btn--secondary">
-                  Feedback
-                </a>
-              </div>
-            </div>
+        {footerLinkGroups.map((group) => (
+          <div className="col-xs-12 col-md-6 col-lg-3 qld__footer__column" key={group.heading}>
+            <nav className="qld__footer__navigation" aria-label={group.heading}>
+              <h3 className="qld__footer__heading">{group.heading}</h3>
+              <ul className="qld__link-list">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <a className="qld__footer__clickable__link" href={link.href}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
 
-        <div className="col-xs-12 col-lg-2 qld__footer__column">
-          <nav className="qld__footer__navigation" aria-label="footer">
-            <ul className="qld__link-list">
-              <li>
-                <a
-                  className="qld__footer__clickable__link"
-                  href="#copyright">
-                  Copyright
-                </a>
-              </li>
-              <li>
-                <a className="qld__footer__clickable__link" href="#disclaimer">
-                  Disclaimer
-                </a>
-              </li>
-              <li>
-                <a className="qld__footer__clickable__link" href="#privacy">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a
-                  className="qld__footer__clickable__link"
-                  href="access-info">
-                  Right to information
-                </a>
-              </li>
-              <li>
-                <a className="qld__footer__clickable__link" href="https://www.qld.gov.au/help/accessibility/">
-                  Accessibility
-                </a>
-              </li>
-              <li>
-                <a className="qld__footer__clickable__link" href="#languages">
-                  Other languages
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <div className="container-fluid">
+      <div className="row">
 
-        <div className="col-xs-12 col-lg-2 qld__footer__column">
-          <div className="">
-            <h3 className="qld__footer__heading">Acknowledgements</h3>
-
-            <p className="qld__footer__acknowledgements">
-              In the spirit of reconciliation Virgin Australia acknowledges the traditional custodians of country throughout Australia and their connections to land, sea, sky and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
-            </p>
-
-            <p className="qld__footer__copyrightMessage">© Virgin Australia Airlines Pty Ltd ABN 36 090 670 965</p>
-          </div>
+        <div className="col-xs-12 col-lg-8 qld__footer__column">
+          <h3 className="qld__footer__heading">Acknowledgements</h3>
+          <p className="qld__footer__acknowledgements">
+            In the spirit of reconciliation Virgin Australia acknowledges the traditional custodians of country
+            throughout Australia and their connections to land, sea, sky and community. We pay our respect to their
+            Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
+          </p>
         </div>
       </div>
     </div>

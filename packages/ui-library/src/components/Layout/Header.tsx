@@ -4,7 +4,7 @@
 import React from "react";
 import { Icon } from "./../Icon/Icon";
 import SvgIconsUrl from "@va/ui-assets/icons/svg-icons-url";
-import virginAustraliaLogoUrl from "@va/ui-assets/logos/header-logo-qgov-url";
+import virginAustraliaLogoUrl from "@va/ui-assets/logos/header-logo-virgin-australia-2022-white-url";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export type HeaderCtaItem = {

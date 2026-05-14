@@ -18,6 +18,7 @@
     "./icons/*": "./icons/*",
     "./images/*": "./images/*",
     "./logos/header-logo-qgov-url": "./logos/header-logo-qgov-url.ts",
+    "./logos/header-logo-virgin-australia-2022-white-url": "./logos/header-logo-virgin-australia-2022-white-url.ts",
     "./logos/*": "./logos/*",
     "./fonts/*": "./fonts/*"
   },
