@@ -58,7 +58,7 @@ export function App() {
   useEffect(() => {
     let mounted = true;
 
-    getCheckInDashboard()
+    const refreshDashboard = () => getCheckInDashboard()
       .then((dashboard) => {
         if (!mounted) return;
         setDashboardState({ status: 'ready', data: dashboard });
@@ -72,8 +72,14 @@ export function App() {
         });
       });
 
+    void refreshDashboard();
+    const timer = window.setInterval(() => {
+      void refreshDashboard();
+    }, 15000);
+
     return () => {
       mounted = false;
+      window.clearInterval(timer);
     };
   }, []);
 
@@ -140,6 +146,14 @@ export function App() {
                       </div>
                     )}]} />
                     <Card variant="no-action" title={dashboard.leadNoteTitle} description={dashboard.leadNote} />
+                    {dashboard.telemetry.engines.map((engine) => (
+                      <Card
+                        key={engine.engineId}
+                        variant="no-action"
+                        title={engine.engineId}
+                        description={`Services subscription. ${engine.flightCount} flights. Sequence ${engine.sequence}.`}
+                      />
+                    ))}
                   </div>
                   <div className="col-xs-12 col-xl-8">
                     <section id="journey-board" aria-label="Online check-in journey board">

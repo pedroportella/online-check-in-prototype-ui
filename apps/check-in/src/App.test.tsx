@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { App } from './App';
 import type { CheckInDashboard } from '@va/services-check-in';
@@ -70,11 +70,25 @@ const dashboard: CheckInDashboard = {
       exceptions: 7,
       stages: { identity: 'green', bags: 'green', seats: 'green', docs: 'amber', boardingPass: 'green' }
     }
-  ]
+  ],
+  telemetry: {
+    generatedAt: '2026-05-13T04:30:00.000Z',
+    engines: [
+      {
+        engineId: 'simulator-engine-1',
+        sequence: 1,
+        emittedAt: '2026-05-13T04:30:00.000Z',
+        intervalMs: 60000,
+        flightCount: 1
+      }
+    ],
+    flights: []
+  }
 };
 
 describe('App', () => {
   afterEach(() => {
+    cleanup();
     vi.restoreAllMocks();
   });
 
@@ -89,6 +103,7 @@ describe('App', () => {
     expect(await screen.findByRole('heading', { name: 'Online check-in delivery cockpit' })).toBeTruthy();
     expect(screen.getByRole('region', { name: 'Online check-in journey board' })).toBeTruthy();
     expect(screen.getByText('AI review coverage')).toBeTruthy();
+    expect(screen.getByText('simulator-engine-1')).toBeTruthy();
     expect(globalThis.fetch).toHaveBeenCalledWith(
       'http://127.0.0.1:7003/api/v1/check-in/dashboard',
       expect.any(Object)

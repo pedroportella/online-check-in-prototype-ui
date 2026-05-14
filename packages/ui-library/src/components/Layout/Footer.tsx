@@ -20,7 +20,7 @@ const Footer = () => (
                 <p className="qld__footer__cta-content">For general enquiries, feedback, complaints and compliments:</p>
                 <p className="qld__footer__cta-content">
                   <i className="qld__footer__cta__icon fa-light fa-phone" aria-hidden="true"></i>
-                  13 QGOV (<a href="tel:137468">13 74 68</a>)<br />
+                  13 QGOV (<a href="tel:137468">11 11 11</a>)<br />
                 </p>
               </div>
               <div className="col-xs-12 col-sm-4 col-lg-12">
@@ -38,24 +38,24 @@ const Footer = () => (
               <li>
                 <a
                   className="qld__footer__clickable__link"
-                  href="https://www.health.qld.gov.au/global/copyright-statement">
+                  href="#copyright">
                   Copyright
                 </a>
               </li>
               <li>
-                <a className="qld__footer__clickable__link" href="https://www.health.qld.gov.au/global/disclaimer">
+                <a className="qld__footer__clickable__link" href="#disclaimer">
                   Disclaimer
                 </a>
               </li>
               <li>
-                <a className="qld__footer__clickable__link" href="https://www.health.qld.gov.au/global/privacy">
+                <a className="qld__footer__clickable__link" href="#privacy">
                   Privacy
                 </a>
               </li>
               <li>
                 <a
                   className="qld__footer__clickable__link"
-                  href="https://www.health.qld.gov.au/system-governance/contact-us/access-info">
+                  href="access-info">
                   Right to information
                 </a>
               </li>
@@ -65,7 +65,7 @@ const Footer = () => (
                 </a>
               </li>
               <li>
-                <a className="qld__footer__clickable__link" href="https://www.qld.gov.au/languages/">
+                <a className="qld__footer__clickable__link" href="#languages">
                   Other languages
                 </a>
               </li>
@@ -78,11 +78,10 @@ const Footer = () => (
             <h3 className="qld__footer__heading">Acknowledgements</h3>
 
             <p className="qld__footer__acknowledgements">
-              Virgin Australia acknowledges the Traditional Owners of the land and pays respect to Elders past,
-              present and future.
+              In the spirit of reconciliation Virgin Australia acknowledges the traditional custodians of country throughout Australia and their connections to land, sea, sky and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
             </p>
 
-            <p className="qld__footer__copyrightMessage">© The State of Queensland 1995–2026</p>
+            <p className="qld__footer__copyrightMessage">© Virgin Australia Airlines Pty Ltd ABN 36 090 670 965</p>
           </div>
         </div>
       </div>

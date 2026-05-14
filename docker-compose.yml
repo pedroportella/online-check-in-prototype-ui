@@ -1,0 +1,8 @@
+services:
+  ui:
+    build:
+      context: .
+      args:
+        VITE_CHECK_IN_API_BASE: http://localhost:7003
+    ports:
+      - "7001:80"
